@@ -53,6 +53,31 @@
    <script type="text/javascript">!function(n,e){var t,o,i,c=[],f={passive:!0,capture:!0},r=new Date,a="pointerup",u="pointercancel";function p(n,c){t||(t=c,o=n,i=new Date,w(e),s())}function s(){o>=0&&o<i-r&&(c.forEach(function(n){n(o,t)}),c=[])}function l(t){if(t.cancelable){var o=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,o){function i(){p(t,o),r()}function c(){r()}function r(){e(a,i,f),e(u,c,f)}n(a,i,f),n(u,c,f)}(o,t):p(o,t)}}function w(n){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(e){n(e,l,f)})}w(n),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){c.push(n),s()}}(addEventListener,removeEventListener);</script>
 
 </head>
+
+<style>
+  .hint{
+    /* position: absolute; */
+    background-color: transparent;
+    border:transparent;
+
+  }
+  .hintCard{
+    
+    padding:10px;
+    border: 1px solid #F7C325 ;
+    background-color: #F7C325;
+    color:black;
+    /* display:none; */
+    visibility:hidden;
+  }
+  .assessment{
+    visibility:hidden;
+  }
+
+</style>
+
+
+
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
@@ -88,7 +113,7 @@
               <button id="btnevaluation" onclick="evaluation()">Evaluation</button>
             </div>
          </div>
-         <div id="action">     
+         <div id="action" class="assessment">     
            <p>Assessment Questions</p>    
            <div id="assess">  
             <p>Jodi owes $2000 in student loans for college.<br />
@@ -119,6 +144,12 @@
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
           <div id="messages">
           </div>
+          <div class="hintCard" id="hint1">Hi, the first thing you need to do is understand your tutee's current knowledge. A good way to know this is to send them a quick assessment. Here is one on the left, you can send it to your tutee!</div>
+          <br>
+          <button class="hint" onclick="display_Hint_1()"><img src="images/hint_label.png" height="30"/></button>
+
+
+          <br>
           <form id="message-form" action="#">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" id="message" autocomplete="off">
@@ -159,6 +190,12 @@
 
   function evaluation(){
     window.location.href="evaluation.html";  
+  }
+
+  function display_Hint_1(){
+    console.log("display hint1")
+    document.getElementById("hint1").style.visibility = "visible";
+    document.getElementById("action").style.visibility = "visible";
   }
 </script>
 <script src="scripts/main.js"></script>
