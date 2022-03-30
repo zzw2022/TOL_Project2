@@ -47,7 +47,7 @@
 
   <!-- App Styling -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/instruction.css">
 
   <!-- TODO: Enable First Input Delay polyfill library. -->
    <script type="text/javascript">!function(n,e){var t,o,i,c=[],f={passive:!0,capture:!0},r=new Date,a="pointerup",u="pointercancel";function p(n,c){t||(t=c,o=n,i=new Date,w(e),s())}function s(){o>=0&&o<i-r&&(c.forEach(function(n){n(o,t)}),c=[])}function l(t){if(t.cancelable){var o=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,o){function i(){p(t,o),r()}function c(){r()}function r(){e(a,i,f),e(u,c,f)}n(a,i,f),n(u,c,f)}(o,t):p(o,t)}}function w(n){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(e){n(e,l,f)})}w(n),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){c.push(n),s()}}(addEventListener,removeEventListener);</script>
@@ -82,15 +82,19 @@
        <div id="statusaction">
          <div id="status">
            <div id="'btns">
-              <button id="btnproblem" onclick="problem()">Problem</button>
-              <button id="btnassessment" onclick="assessment()">Assessment</button>
-              <button id="btninstruction" onclick="instruction()">Instruction</button>
-              <button id="btnevaluation" onclick="evaluation()">Evaluation</button>
+              <button id="btnproblem">Problem</button>
+              <button id="btnassessment">Assessment</button>
+              <button id="btninstruction">Instruction</button>
+              <button id="btnevaluation">Evaluation</button>
             </div>
          </div>
-         <div id="action">     
-           <p>Send Question</p>
-           <p>Hi! You can enter your questions in the chatbox.</p>    
+         <div id="action">
+           <div id="result">
+              <p>placeholder</p>
+           </div>
+           <div id="graph">
+             <p>graphs</p>
+          </div>
          </div>
 
        </div>
@@ -129,8 +133,7 @@
 
 <!-- This script is created by webpack -->
 <script>
-
-  function assessment(){
+ function assessment(){
     window.location.href="teeassessment.html";  
   }
 
