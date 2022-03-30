@@ -46,7 +46,6 @@ main, #messages-card, #action {
   border:black 1px solid;
   margin-top:4%;
   margin-right:6%;
-
   height:92%;
 }
 
@@ -222,7 +221,7 @@ main, #messages-card, #action {
   margin-right: 5px;
 }
 
-#btnproblem{
+#btnassessment, #btnproblem{
   background-color: #0288D1;
 }
 
