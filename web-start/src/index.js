@@ -450,5 +450,5 @@ initFirebaseAuth();//REPLACED!
 
 // Initialize firebase auth
 
-
 loadMessages();
+
