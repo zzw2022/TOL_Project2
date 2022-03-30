@@ -115,7 +115,7 @@ function loadMessages() {
       } else {
         var message = change.doc.data();
         displayMessage(change.doc.id, message.timestamp, message.name,
-                      message.text, message.profilePicUrl, message.imageUrl);
+                      message.text, message.profilePicUrl, message.imageUrl,message.state);
       }
     });
   });
@@ -362,7 +362,7 @@ function createAndInsertMessage(id, timestamp) {
 }
 
 // Displays a Message in the UI.
-function displayMessage(id, timestamp, name, text, picUrl, imageUrl) {
+function displayMessage(id, timestamp, name, text, picUrl, imageUrl,state) {
   var div =
     document.getElementById(id) || createAndInsertMessage(id, timestamp);
 
@@ -372,31 +372,101 @@ function displayMessage(id, timestamp, name, text, picUrl, imageUrl) {
       'url(' + addSizeToGoogleProfilePic(picUrl) + ')';
   }
 
-  div.querySelector('.name').textContent = name;
-  var messageElement = div.querySelector('.message');
-
-  if (text) {
-    // If the message is text.
-    messageElement.textContent = text;
-    // Replace all line breaks by <br>.
-    messageElement.innerHTML = messageElement.innerHTML.replace(/\n/g, '<br>');
-  } else if (imageUrl) {
-    // If the message is an image.
-    var image = document.createElement('img');
-    image.addEventListener('load', function () {
-      messageListElement.scrollTop = messageListElement.scrollHeight;
-    });
-    image.src = imageUrl + '&' + new Date().getTime();
-    messageElement.innerHTML = '';
-    messageElement.appendChild(image);
+    //Tutor-problem page
+    if (window.location.pathname == "/tutor.html" || window.location.pathname == "/tutee.html") {
+      div.querySelector('.name').textContent = name;
+      var messageElement = div.querySelector('.message');
+      //Display related messages from tutor
+      if (state == 1) {
+        if (text) {
+          // If the message is text.
+          messageElement.textContent = text;
+          // Replace all line breaks by <br>.
+          messageElement.innerHTML = messageElement.innerHTML.replace(/\n/g, '<br>');
+        } else if (imageUrl) {
+          console.log("image")
+          // If the message is an image.
+          var image = document.createElement('img');
+          image.addEventListener('load', function () {
+            messageListElement.scrollTop = messageListElement.scrollHeight;
+          });
+          image.src = imageUrl + '&' + new Date().getTime();
+          messageElement.innerHTML = '';
+          messageElement.appendChild(image);
+        }
+        // Show the card fading-in and scroll to view the new message.
+        setTimeout(function () {
+          div.classList.add('visible');
+        }, 1);
+        messageListElement.scrollTop = messageListElement.scrollHeight;
+        messageInputElement.focus();
+      }
+  
+    }
+    //Tutor-Assessment page
+    else if (window.location.pathname == "/assessment.html" || window.location.pathname == "/teeassessment.html") {
+      div.querySelector('.name').textContent = name;
+      var messageElement = div.querySelector('.message');
+      //Display related messages from tutor
+      if (state <= 2) {
+        if (text) {
+          // If the message is text.
+          messageElement.textContent = text;
+          // Replace all line breaks by <br>.
+          messageElement.innerHTML = messageElement.innerHTML.replace(/\n/g, '<br>');
+        } else if (imageUrl) {
+          console.log("image")
+          // If the message is an image.
+          var image = document.createElement('img');
+          image.addEventListener('load', function () {
+            messageListElement.scrollTop = messageListElement.scrollHeight;
+          });
+          image.src = imageUrl + '&' + new Date().getTime();
+          messageElement.innerHTML = '';
+          messageElement.appendChild(image);
+        }
+        // Show the card fading-in and scroll to view the new message.
+        setTimeout(function () {
+          div.classList.add('visible');
+        }, 1);
+        messageListElement.scrollTop = messageListElement.scrollHeight;
+        messageInputElement.focus();
+      }
+    }
+    //instruction
+    else if (window.location.pathname == "/instruction.html" || window.location.pathname == "/evaluation.html" ||
+      window.location.pathname == "/teeevaluation.html" || window.location.pathname == "/teeinstruction.html") {
+      div.querySelector('.name').textContent = name;
+      var messageElement = div.querySelector('.message');
+      //Display related messages from tutor
+      if (state <= 3) {
+        if (text) {
+          // If the message is text.
+          messageElement.textContent = text;
+          // Replace all line breaks by <br>.
+          messageElement.innerHTML = messageElement.innerHTML.replace(/\n/g, '<br>');
+        } else if (imageUrl) {
+          console.log("image")
+          // If the message is an image.
+          var image = document.createElement('img');
+          image.addEventListener('load', function () {
+            messageListElement.scrollTop = messageListElement.scrollHeight;
+          });
+          image.src = imageUrl + '&' + new Date().getTime();
+          messageElement.innerHTML = '';
+          messageElement.appendChild(image);
+        }
+        // Show the card fading-in and scroll to view the new message.
+        setTimeout(function () {
+          div.classList.add('visible');
+        }, 1);
+        messageListElement.scrollTop = messageListElement.scrollHeight;
+        messageInputElement.focus();
+      }
+  
+    }
   }
-  // Show the card fading-in and scroll to view the new message.
-  setTimeout(function () {
-    div.classList.add('visible');
-  }, 1);
-  messageListElement.scrollTop = messageListElement.scrollHeight;
-  messageInputElement.focus();
-}
+  
 
 // Enables or disables the submit button depending on the values of the input
 // fields.
