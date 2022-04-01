@@ -91,8 +91,41 @@
          <div id="action">
            <p>Hi Tutor, how 's your experience with your tutee today?</p>
            <div id="survey">
-             <p>placeholder</p>
+            <form action="/action_page.php">
+              <p>1. Did your problem get solved?</p >
+              <input type="radio" id="yes" name="selection" value="Yes">
+              <label for="html">Yes</label><br>
+              <input type="radio" id="no" name="selection" value="No">
+              <label for="css">No</label><br>
+          </form>
+          <br>
+          <p>2. Please rate your satisfication with your experience with the tutor.</p >
+            <table class="tuteesurvey2">
+              <thead>
+                  <tr>
+                      <th>Rating</th>
+                      <th>1 <br>Very Dissatisfied</th>
+                      <th>2 <br>Dissatisfied</th>
+                      <th>3 <br>Reach Minimal Requirement</th>
+                      <th>4 <br>Satisfied</th>
+                      <th>5 <br>Very Satisfied</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>Satisfication Level</td>            
+                      <td><input type="radio" value="1" id="tul1" name="tuteerate"/></td>
+                      <td><input type="radio" value="2" id="tul2" name="tuteerate"/></td>
+                      <td><input type="radio" value="3" id="tul3" name="tuteerate"/></td>
+                      <td><input type="radio" value="4" id="tul4" name="tuteerate"/></td>
+                      <td><input type="radio" value="5" id="tul5" name="tuteerate"/></td>
+                      
+                  </tr>
+                 
+              </tbody>
+          </table>
            </div>
+           <button id="teeevaluationsubmit" onclick="teepp()">submit</button>
          </div>
 
        </div>
@@ -142,6 +175,27 @@
   function evaluation(){
     window.location.href="teeevaluation.html";  
   }
+
+  function teepp(){
+    let tche1 = document.getElementById("tul1");
+    let tche2 = document.getElementById("tul2");
+    let tche3 = document.getElementById("tul3");
+    let tche4 = document.getElementById("tul4");
+    let tche5 = document.getElementById("tul5");
+    let tc1 = document.getElementById("yes"); 
+    let tc2 = document.getElementById("no"); 
+ 
+    if ((tche1.checked || tche2.checked || tche3.checked || tche4.checked || tche5.checked) && (tc1.checked || tc2.checked)){
+      console.log('2');
+      alert("You've succesfully submitted your answer!");
+    }
+    else{
+      alert("Please finish the evaluation survey : )");
+    }
+   
+  }
+
+
 </script>
 <script src="scripts/main.js"></script>
 </body>

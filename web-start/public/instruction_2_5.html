@@ -116,9 +116,7 @@
            </div>
            <div id="graph">
             <img src="images/interest.jpeg" alt="simple" width="400">
-            <button onclick="jumpTo_instruction2()">send</button>
           </div>
-         
          </div>
 
        </div>
@@ -128,9 +126,9 @@
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
           <div id="messages">
           </div>
-          <div class="hintCard" id="hint2">Based on the results, your tutee has a problem understanding how the principal amount change using compound interest. A great way to explain is to use some graphs to visualize the year-by-year process</div>
+          <div class="hintCard" id="hint3">Now that your tutee has solved his/her problem. To better test for his/her understanding, you can ask he/her to explain the problem in his/her own words.&nbsp&nbsp<a onclick="jumpTo_instruction3()">Test tutee</a></div>
           <br>
-          <button class="hint" onclick="display_Hint_2()"><img src="images/hint_label.png" height="30"/></button>
+          <button class="hint" onclick="display_Hint_3()"><img src="images/hint_label.png" height="30"/></button>
           <br>
           <form id="message-form" action="#">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -164,13 +162,14 @@
   function problem(){
     window.location.href="problem.html";  
   }
-  function display_Hint_2(){
-    console.log("display hint2")
-    document.getElementById("hint2").style.visibility = "visible";
+  function display_Hint_3(){
+    console.log("display hint3")
+    document.getElementById("hint3").style.visibility = "visible";
     document.getElementById("action").style.visibility = "visible";
   }
-  function jumpTo_instruction2(){
-    window.window.location.href="instruction_2.html";  
+
+  function jumpTo_instruction3(){
+    window.location.href="instruction_3.html";  
   }
 
 </script>

@@ -91,29 +91,31 @@
          <div id="action">
            <p>Hi Tutor, how 's your experience with your tutee today?</p>
            <div id="survey">
+            <p>1. Please rate your your tutee's explanation.</p >
             <table class="tutorsurvey">
               <thead>
-                  <tr>
-                      <th>Question</th>
-                      <th>1</th>
-                      <th>2</th>
-                      <th>3</th>
-                      <th>4</th>
-                      <th>5</th>
-                  </tr>
-              </thead>
+                <tr>
+                    <th>Rating</th>
+                    <th>1 <br>Poor</th>
+                    <th>2 <br>Weak</th>
+                    <th>3 <br>Average</th>
+                    <th>4 <br>Good</th>
+                    <th>5 <br>Excellent</th>
+                </tr>
+            </thead>
               <tbody>
                   <tr>
-                      <td>Please rate your tutee's explanation.</td>
-                      <td><input type="radio" value="1" name="tutorrate"/></td>
-                      <td><input type="radio" value="2" name="tutorrate"/></td>
-                      <td><input type="radio" value="3" name="tutorrate"/></td>
-                      <td><input type="radio" value="4" name="tutorrate"/></td>
-                      <td><input type="radio" value="5" name="tutorrate"/></td>
+                      <td>Understanding level</td>
+                      <td><input type="radio" value="1" id="ul1" name="tutorrate"/></td>
+                      <td><input type="radio" value="2" id="ul2" name="tutorrate"/></td>
+                      <td><input type="radio" value="3" id="ul3" name="tutorrate"/></td>
+                      <td><input type="radio" value="4" id="ul4" name="tutorrate"/></td>
+                      <td><input type="radio" value="5" id="ul5" name="tutorrate"/></td>
                   </tr>
               </tbody>
           </table>
            </div>
+            <button id="evaluationsubmit" onclick="pp()">submit</button>
          </div>
 
        </div>
@@ -155,6 +157,24 @@
   function problem(){
     window.location.href="problem.html";  
   }
+
+  function pp(){
+    let che1 = document.getElementById("ul1");
+    let che2 = document.getElementById("ul2");
+    let che3 = document.getElementById("ul3");
+    let che4 = document.getElementById("ul4");
+    let che5 = document.getElementById("ul5");
+ 
+    if (che1.checked || che2.checked || che3.checked || che4.checked || che5.checked){
+      console.log('2');
+      alert("You've succesfully submitted your answer!");
+    }
+    else{
+      alert("Please finish the evaluation survey : )");
+    }
+   
+  }
+
 </script>
 <script src="scripts/main.js"></script>
 </body>

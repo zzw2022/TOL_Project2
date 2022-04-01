@@ -129,22 +129,44 @@ function loadMessages() {
           }
         }
 
+        else if (window.location.pathname == "/instruction.html" || window.location.pathname == "/teeassessment.html"){
+          if (message.state <=2){
+            displayMessage(change.doc.id, message.timestamp, message.name,
+              message.text, message.profilePicUrl, message.imageUrl,message.state);
+          }
+        }
+
+        else if (window.location.pathname == "/instruction_2.html" || window.location.pathname == "/teeassessment.html"){
+          if (message.state <=3){
+            displayMessage(change.doc.id, message.timestamp, message.name,
+              message.text, message.profilePicUrl, message.imageUrl,message.state);
+          }
+        }
+
+        else if (window.location.pathname == "/instruction_2_5.html" || window.location.pathname == "/teeassessment.html"){
+          if (message.state <=3.5){
+            displayMessage(change.doc.id, message.timestamp, message.name,
+              message.text, message.profilePicUrl, message.imageUrl,message.state);
+          }
+        }
+
+        else if (window.location.pathname == "/instruction_3.html" || window.location.pathname == "/teeassessment.html"){
+          if (message.state <=4){
+            displayMessage(change.doc.id, message.timestamp, message.name,
+              message.text, message.profilePicUrl, message.imageUrl,message.state);
+          }
+        }
+
         else if (window.location.pathname == "/instruction.html" || window.location.pathname == "/evaluation.html" ||
           window.location.pathname == "/teeevaluation.html" || window.location.pathname == "/teeinstruction.html"){
-            if (message.state <=3){
+            if (message.state <=4){
               displayMessage(change.doc.id, message.timestamp, message.name,
                 message.text, message.profilePicUrl, message.imageUrl,message.state);
             }
           }
 
-
-
         // displayMessage(change.doc.id, message.timestamp, message.name,
         //               message.text, message.profilePicUrl, message.imageUrl,message.state);
-
-
-
-
 
       }
     });
