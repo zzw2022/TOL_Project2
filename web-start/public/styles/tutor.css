@@ -76,10 +76,11 @@ main, #messages-card, #action {
 #messages {
   overflow-y: auto;
   margin-bottom: 10px;
-  height: calc(100% - 80px);
+  height: calc(100% - 200px);
   display: flex;
   flex-direction: column;
 }
+
 #message-filler {
   flex-grow: 1;
 }
