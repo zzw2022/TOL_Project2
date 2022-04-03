@@ -18,10 +18,23 @@
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 main {
-  padding-top:10%;
+  padding-top:15%;
 }
 
 .guide{
   margin:auto;
   width:50%;
+  text-align: center;
+}
+
+.processtab{
+  color: #999999;
+  background-color: #0288D1;
+  color: white; 
+  margin: 30px;
+}
+
+body{
+  font-size: 24px;
+  line-height: 3rem;
 }

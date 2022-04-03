@@ -82,20 +82,20 @@
        <div id="statusaction">
          <div id="status">
            <div id="'btns">
-              <button id="btnproblem">Problem</button>
-              <button id="btnassessment">Assessment</button>
-              <button id="btninstruction">Instruction</button>
-              <button id="btnevaluation">Evaluation</button>
+            <button class="processtab mdl-button" id="btnproblem" onclick="problem()">Problem</button>
+            <button class="processtab mdl-button" id="btnassessment" onclick="assessment()">Assessment</button>
+            <button class="processtab mdl-button" id="btninstruction" onclick="instruction()">Instruction</button>
+            <button class="processtab mdl-button" id="btnevaluation" onclick="evaluation()">Evaluation</button>
             </div>
          </div>
          <div id="action">
-           <p>Hi Tutor, how 's your experience with your tutee today?</p>
+           <h6><i>Hi Tutor, how 's your experience with your tutee today?</i></h6>
            <div id="survey">
-            <p>1. Please rate your your tutee's explanation.</p >
+            <p>Please rate your tutee's understanding based on the self-explanation.</p >
             <table class="tutorsurvey">
               <thead>
                 <tr>
-                    <th>Rating</th>
+                    <!-- <th>Rating</th> -->
                     <th>1 <br>Poor</th>
                     <th>2 <br>Weak</th>
                     <th>3 <br>Average</th>
@@ -105,7 +105,7 @@
             </thead>
               <tbody>
                   <tr>
-                      <td>Understanding level</td>
+                      <!-- <td>Understanding level</td> -->
                       <td><input type="radio" value="1" id="ul1" name="tutorrate"/></td>
                       <td><input type="radio" value="2" id="ul2" name="tutorrate"/></td>
                       <td><input type="radio" value="3" id="ul3" name="tutorrate"/></td>
@@ -115,7 +115,7 @@
               </tbody>
           </table>
            </div>
-            <button id="evaluationsubmit" onclick="pp()">submit</button>
+            <button class="processtab mdl-button" id="evaluationsubmit" onclick="pp()">submit</button>
          </div>
 
        </div>

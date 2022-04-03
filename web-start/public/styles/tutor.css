@@ -43,11 +43,13 @@ main, #messages-card, #action {
 }
 
 #action{
-  border:black 1px solid;
+  padding: 20px;
   margin-top:4%;
   margin-right:6%;
-
-  height:92%;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  background: linear-gradient(white, #f9f9f9);
+  height:758px;
+  text-align: center;
 }
 
 .mdl-layout__header-row span {
@@ -223,11 +225,22 @@ main, #messages-card, #action {
   margin-right: 5px;
 }
 
-#btnproblem{
+.processtab{
+  color: #999999;
   background-color: #0288D1;
+  color: white; 
+}
+
+.processtab-disable{
+  color: #999999;
+  background-color: #e0e0e0;
+  cursor: default;
 }
 
 #assess{
-  border:black 1px solid;
-  margin:10%;
+  margin: 40px 30px;
+  text-align: left;
+  padding: 20px;
+  background: aliceblue;
+  border-radius: 10px;
 }

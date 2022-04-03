@@ -52,6 +52,20 @@
   <!-- TODO: Enable First Input Delay polyfill library. -->
    <script type="text/javascript">!function(n,e){var t,o,i,c=[],f={passive:!0,capture:!0},r=new Date,a="pointerup",u="pointercancel";function p(n,c){t||(t=c,o=n,i=new Date,w(e),s())}function s(){o>=0&&o<i-r&&(c.forEach(function(n){n(o,t)}),c=[])}function l(t){if(t.cancelable){var o=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,o){function i(){p(t,o),r()}function c(){r()}function r(){e(a,i,f),e(u,c,f)}n(a,i,f),n(u,c,f)}(o,t):p(o,t)}}function w(n){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(e){n(e,l,f)})}w(n),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){c.push(n),s()}}(addEventListener,removeEventListener);</script>
 
+   <style>
+    .card-1{
+      height:758px;
+    }
+
+    #messages {
+    height: calc(100% - 80px);
+    }
+
+    #assess{
+      padding: 15px;
+    }
+  </style>
+
 </head>
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -82,20 +96,41 @@
        <div id="statusaction">
          <div id="status">
            <div id="'btns">
-              <button id="btnproblem">Problem</button>
-              <button id="btnassessment">Assessment</button>
-              <button id="btninstruction">Instruction</button>
-              <button id="btnevaluation">Evaluation</button>
+              <button class="processtab mdl-button" id="btnproblem" onclick="problem()">Problem</button>
+              <button class="processtab mdl-button" id="btnassessment" onclick="assessment()">Assessment</button>
+              <button class="processtab mdl-button" id="btninstruction" onclick="instruction()">Instruction</button>
+              <button class="processtab-disable mdl-button" id="btnevaluation" onclick="evaluation()">Evaluation</button>
             </div>
          </div>
-         <div id="action">
-           <div id="result">
-              <p>placeholder</p>
+         
+         <div class="card-1" id="result">
+          <h6><i>Here's your assessment result:</i></h6>
+          <br>
+          <div id="assess">  
+            <p>Jodi owes $2000 in student loans for college. 
+              The interest rate is 8.5% and the loan will 
+              be paid off over 3 years. <br />Which interest, compound, or simple will 
+              give her a higher accrued amount after 3 years? Why? <br />
+              1. Recall the formula for simple interest: <u>A = P(1 + rt)</u> ✅<br />
+              2. Recall the formula for compound interest: <u>A = P(1 + r)^t</u> ✅ <br />
+              <br />
+              <b>Simple Interest</b><br />
+              For the first year, Jodi's Principal Amount for deposit is: <u>$2000</u> ✅<br />
+              On the second year, Jodi's Principal Amount for deposit is: <u>$2000</u> ✅<br />
+              On the third year, Jodi's Principal Amount for deposit is: <u>$2000</u> ✅<br />
+              <br />
+              <b>Compound Interest</b><br />
+              For the first year, Jodi's Principal Amount for deposit is: <u>$2000</u> ✅<br />
+              On the second year, Jodi's Principal Amount for deposit is: <u>$2000</u> ❌<br />
+              On the third year, Jodi's Principal Amount for deposit is: <u>$2000</u> ❌
+            </p>
+            <br>
+            <p><i>You correctly recalled the formulas for simple interest and compound interest. 
+              However, you did not fully understand the change of principal amount when applying the compound interest.</i></p>
+
            </div>
-           <div id="graph">
-             <p>graphs</p>
-          </div>
          </div>
+
 
        </div>
       

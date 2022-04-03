@@ -65,6 +65,7 @@
     
     padding:10px;
     border: 1px solid #F7C325 ;
+    border-radius: 2px;
     background-color: #F7C325;
     color:black;
     /* display:none; */
@@ -107,34 +108,34 @@
        <div id="statusaction">
          <div id="status">
            <div id="'btns">
-              <button id="btnproblem" onclick="problem()">Problem</button>
-              <button id="btnassessment" onclick="assessment()">Assessment</button>
-              <button id="btninstruction" onclick="instruction()">Instruction</button>
-              <button id="btnevaluation" onclick="evaluation()">Evaluation</button>
+              <button class="processtab mdl-button" id="btnproblem" onclick="problem()">Problem</button>
+              <button class="processtab-disable mdl-button" id="btnassessment" onclick="assessment()">Assessment</button>
+              <button class="processtab-disable mdl-button" id="btninstruction" onclick="instruction()">Instruction</button>
+              <button class="processtab-disable mdl-button" id="btnevaluation" onclick="evaluation()">Evaluation</button>
             </div>
          </div>
          <div id="action" class="assessment">     
-           <p>Assessment Questions</p>    
+           <h5>Assessment Questions</h5>    
            <div id="assess">  
-            <p>Jodi owes $2000 in student loans for college.<br />
+            <p>Jodi owes $2000 in student loans for college. 
               The interest rate is 8.5% and the loan will 
               be paid off over 3 years. <br />Which interest, compound, or simple will 
               give her a higher accrued amount after 3 years? Why? <br />
               1. Recall the formula for simple interest: _____ <br />
               2. Recall the formula for compound interest: _____<br />
               <br />
-              Simple Interest<br />
+              <b>Simple Interest</b><br />
               For the first year, Jodi's Principal Amount for deposit is: _____<br />
               On the second year, Jodi's Principal Amount for deposit is: _____<br />
               On the third year, Jodi's Principal Amount for deposit is: _____<br />
               <br />
-              Compound Interest<br />
+              <b>Compound Interest</b><br />
               For the first year, Jodi's Principal Amount for deposit is: _____<br />
               On the second year, Jodi's Principal Amount for deposit is: _____<br />
               On the third year, Jodi's Principal Amount for deposit is: _____
             </p>
            </div>
-           <button onclick="assessment()">Send</button>
+           <button class="processtab mdl-button" onclick="assessment()">Send</button>
          </div>
 
        </div>

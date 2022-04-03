@@ -82,14 +82,14 @@
        <div id="statusaction">
          <div id="status">
            <div id="'btns">
-              <button id="btnproblem">Problem</button>
-              <button id="btnassessment">Assessment</button>
-              <button id="btninstruction">Instruction</button>
-              <button id="btnevaluation">Evaluation</button>
+            <button class="processtab mdl-button" id="btnproblem" onclick="problem()">Problem</button>
+            <button class="processtab mdl-button" id="btnassessment" onclick="assessment()">Assessment</button>
+            <button class="processtab mdl-button" id="btninstruction" onclick="instruction()">Instruction</button>
+            <button class="processtab mdl-button" id="btnevaluation" onclick="evaluation()">Evaluation</button>
             </div>
          </div>
          <div id="action">
-           <p>Hi Tutor, how 's your experience with your tutee today?</p>
+           <h6><i>Hi Tutee, how 's your experience with your tutor today?</i></h6>
            <div id="survey">
             <form action="/action_page.php">
               <p>1. Did your problem get solved?</p >
@@ -103,29 +103,51 @@
             <table class="tuteesurvey2">
               <thead>
                   <tr>
-                      <th>Rating</th>
+                      <!-- <th>Rating</th> -->
                       <th>1 <br>Very Dissatisfied</th>
                       <th>2 <br>Dissatisfied</th>
                       <th>3 <br>Reach Minimal Requirement</th>
-                      <th>4 <br>Satisfied</th>
-                      <th>5 <br>Very Satisfied</th>
+                      <!-- <th>4 <br>Satisfied</th> -->
+                      <!-- <th>5 <br>Very Satisfied</th> -->
                   </tr>
               </thead>
               <tbody>
                   <tr>
-                      <td>Satisfication Level</td>            
+                      <!-- <td>Satisfication Level</td>             -->
                       <td><input type="radio" value="1" id="tul1" name="tuteerate"/></td>
                       <td><input type="radio" value="2" id="tul2" name="tuteerate"/></td>
                       <td><input type="radio" value="3" id="tul3" name="tuteerate"/></td>
-                      <td><input type="radio" value="4" id="tul4" name="tuteerate"/></td>
-                      <td><input type="radio" value="5" id="tul5" name="tuteerate"/></td>
+                      <!-- <td><input type="radio" value="4" id="tul4" name="tuteerate"/></td> -->
+                      <!-- <td><input type="radio" value="5" id="tul5" name="tuteerate"/></td> -->
                       
                   </tr>
                  
               </tbody>
+              <thead>
+                <tr>
+                    <!-- <th>Rating</th> -->
+                    <!-- <th>1 <br>Very Dissatisfied</th> -->
+                    <!-- <th>2 <br>Dissatisfied</th> -->
+                    <!-- <th>3 <br>Reach Minimal Requirement</th> -->
+                    <th>4 <br>Satisfied</th>
+                    <th>5 <br>Very Satisfied</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- <td>Satisfication Level</td>             -->
+                    <!-- <td><input type="radio" value="1" id="tul1" name="tuteerate"/></td> -->
+                    <!-- <td><input type="radio" value="2" id="tul2" name="tuteerate"/></td> -->
+                    <!-- <td><input type="radio" value="3" id="tul3" name="tuteerate"/></td> -->
+                    <td><input type="radio" value="4" id="tul4" name="tuteerate"/></td>
+                    <td><input type="radio" value="5" id="tul5" name="tuteerate"/></td>
+                    
+                </tr>
+               
+            </tbody>
           </table>
            </div>
-           <button id="teeevaluationsubmit" onclick="teepp()">submit</button>
+           <button class="processtab mdl-button" id="teeevaluationsubmit" onclick="teepp()">submit</button>
          </div>
 
        </div>

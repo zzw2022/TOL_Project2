@@ -64,12 +64,13 @@
     
     padding:10px;
     border: 1px solid #F7C325 ;
+    border-radius: 2px;
     background-color: #F7C325;
     color:black;
     /* display:none; */
     visibility:hidden;
   }
-  .assessment{
+  #graph{
     visibility:hidden;
   }
 
@@ -104,23 +105,44 @@
        <div id="statusaction">
          <div id="status">
            <div id="'btns">
-              <button id="btnproblem">Problem</button>
-              <button id="btnassessment">Assessment</button>
-              <button id="btninstruction">Instruction</button>
-              <button id="btnevaluation">Evaluation</button>
+            <button class="processtab mdl-button" id="btnproblem" onclick="problem()">Problem</button>
+            <button class="processtab mdl-button" id="btnassessment" onclick="assessment()">Assessment</button>
+            <button class="processtab mdl-button" id="btninstruction" onclick="instruction()">Instruction</button>
+            <button class="processtab-disable mdl-button" id="btnevaluation" onclick="evaluation()">Evaluation</button>
             </div>
          </div>
-         <div id="action">
-           <div id="result">
-              <p>Okay, so here's the result for your tutee:</p>
+         
+           <div class="card-1" id="result">
+            <h6><i>Okay, so here's the result for your tutee:</i></h6>
+            <div id="assess">  
+              <p><i>Your tutee correctly recalled the formulas for simple interest and compound interest. 
+                However, your tutee did not fully understand the change of principal amount when applying the compound interest.</i></p>
+              <!-- <p>Jodi owes $2000 in student loans for college. 
+                The interest rate is 8.5% and the loan will 
+                be paid off over 3 years. <br />Which interest, compound, or simple will 
+                give her a higher accrued amount after 3 years? Why? <br />
+                1. Recall the formula for simple interest: <u>A = P(1 + rt)</u> ✅<br />
+                2. Recall the formula for compound interest: <u>A = P(1 + r)^t</u> ✅ <br />
+                <br />
+                <b>Simple Interest</b><br />
+                For the first year, Jodi's Principal Amount for deposit is: <u>$2000</u> ✅<br />
+                On the second year, Jodi's Principal Amount for deposit is: <u>$2000</u> ✅<br />
+                On the third year, Jodi's Principal Amount for deposit is: <u>$2000</u> ✅<br />
+                <br />
+                <b>Compound Interest</b><br />
+                For the first year, Jodi's Principal Amount for deposit is: <u>$2000</u> ✅<br />
+                On the second year, Jodi's Principal Amount for deposit is: <u>$2000</u> ❌<br />
+                On the third year, Jodi's Principal Amount for deposit is: <u>$2000</u> ❌
+              </p> -->
+             </div>
+             
            </div>
-           <div id="graph">
-            <img src="images/interest.jpeg" alt="simple" width="400">
-            <button onclick="jumpTo_instruction2()">send</button>
+
+           <div class="card-2" id="graph">
+             <div><img src="images/interest.jpeg" alt="simple" width="400"></div>
+            <button id="sendgraph" class="processtab mdl-button" onclick="jumpTo_instruction2()">send</button>
           </div>
          
-         </div>
-
        </div>
       
        <!-- Messages container -->
@@ -167,7 +189,7 @@
   function display_Hint_2(){
     console.log("display hint2")
     document.getElementById("hint2").style.visibility = "visible";
-    document.getElementById("action").style.visibility = "visible";
+    document.getElementById("graph").style.visibility = "visible";
   }
   function jumpTo_instruction2(){
     window.window.location.href="instruction_2.html";  
